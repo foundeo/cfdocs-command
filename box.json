@@ -14,7 +14,7 @@
         "url":"https://github.com/foundeo/cfdocs-command.git"
     },
     "bugs":"",
-    "slug":"cfdocs-command",
+    "slug":"cfdocs",
     "shortDescription":"A command for accessing CFML documentation powered by cfdocs.org",
     "description":"Displays concise CFML documentation (tag attributes,
     \n    \n     function arguments,
@@ -36,7 +36,7 @@
         }
     ],
     "contributors":[
-        
+
     ],
     "ignore":[
         "**/.*",
