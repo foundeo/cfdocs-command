@@ -1,6 +1,6 @@
 {
     "name":"cfdocs-command",
-    "version":"0.0.1",
+    "version":"0.0.2",
     "author":"Pete Freitag,
     \n    \n     Foundeo Inc.",
     "location":"",
@@ -20,7 +20,7 @@
     \n    \n     function arguments,
     \n    \n     etc) quickly including examples (in some cases).",
     "instructions":"",
-    "changelog":"* Version 0.0.1 the initial version.",
+    "changelog":"https://github.com/foundeo/cfdocs-command/blob/master/cfdocs/changelog.txt",
     "type":"commandbox-commands",
     "keywords":[
         "documenation",

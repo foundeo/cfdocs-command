@@ -44,10 +44,10 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
                     print.yellow("Tip: type ").yellowBold("doc " & doc.name & " examples").yellow(" to see examples.")
                 }
             }
-            if (arguments.mode == "examples" || arguments.mode == "ex") {
+            else if (arguments.mode == "examples" || arguments.mode == "ex") {
                 showExamples(doc);
             } else if (arguments.mode == "arguments" || arguments.mode =="args" || arguments.mode == "attributes" || arguments.mode == "attr") {
-
+				showParams(doc);
             } else {
                 print.boldRedLine("Sorry I don't know mode: " & arguments.mode);
                 print.line();
@@ -74,7 +74,7 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
             } else {
                 print.boldText("Arguments").line();
             }
-            if (arguments.mode == "full") {
+            if (arguments.mode != "default") {
                 for (local.p in doc.params) {
                     local.notRequired = StructKeyExists(local.p, "required") AND !local.p.required;
                     if (local.notRequired) {

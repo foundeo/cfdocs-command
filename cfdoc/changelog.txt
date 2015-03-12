@@ -1,0 +1,5 @@
+Version 0.0.2 2015-03-12
+    * Fixed some display bugs
+    * Renamed namespace to cfdoc
+Version 0.0.1 2015-03-12
+    * Initial Version!
