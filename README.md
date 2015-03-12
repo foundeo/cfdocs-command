@@ -9,6 +9,10 @@ First make sure you have CommandBox installed, then type:
 
     box install cfdocs
 
+Or if you are already within the CommandBox CLI, you can just type:
+
+    install cfdocs
+
 ## Using the command
 
 There are a few display modes you can use, the default:
