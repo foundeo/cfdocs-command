@@ -1,0 +1,46 @@
+{
+    "name":"cfdocs-command",
+    "version":"0.0.1",
+    "author":"Pete Freitag,
+    \n    \n     Foundeo Inc.",
+    "location":"",
+    "directory":"",
+    "createPackageDirectory":true,
+    "packageDirectory":"",
+    "homepage":"http://cfdocs.org/",
+    "documentation":"https://github.com/foundeo/cfdocs-command",
+    "repository":{
+        "type":"Git",
+        "url":"https://github.com/foundeo/cfdocs-command.git"
+    },
+    "bugs":"",
+    "slug":"cfdocs-command",
+    "shortDescription":"A command for accessing CFML documentation powered by cfdocs.org",
+    "description":"Displays concise CFML documentation (tag attributes,
+    \n    \n     function arguments,
+    \n    \n     etc) quickly including examples (in some cases).",
+    "instructions":"",
+    "changelog":"* Version 0.0.1 the initial version.",
+    "type":"commandbox-commands",
+    "keywords":[
+        "documenation",
+        "docs",
+        "cfdocs",
+        "cfdoc",
+        "livedocs"
+    ],
+    "license":[
+        {
+            "type":"",
+            "url":""
+        }
+    ],
+    "contributors":[
+        
+    ],
+    "ignore":[
+        "**/.*",
+        "test",
+        "tests"
+    ]
+}
