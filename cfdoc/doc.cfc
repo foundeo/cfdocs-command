@@ -11,7 +11,7 @@
  **/
 component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=false {
 
-
+	variables.nameArgCache = [];
 
 	/**
 	* @name.hint The tag or function name
@@ -132,11 +132,28 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
             return {};
         }
     }
-    
+
     function autocompleteName() {
-    	// This ONLY pulls functions.  Find a way to add in tags too.
-    	// Perhaps store in a file and read/cache.
-    	return listToArray( structKeyList( getFunctionList() ) );
+		if (ArrayLen(variables.nameArgCache) == 0) {
+			variables.nameArgCache = listToArray( structKeyList( getFunctionList() ) );
+			cfhttp(url="https://raw.githubusercontent.com/foundeo/cfdocs/master/data/en/index.json", result="local.httpResult", method="get");
+	        if (local.httpResult.statuscode contains "200") {
+	            local.doc = deserializeJSON(local.httpResult.fileContent);
+				//add any functions not in getFunctionList
+				for (local.f in local.doc.functions) {
+					if (!ArrayFindNoCase(variables.nameArgCache, local.f)) {
+						ArrayAppend(variables.nameArgCache, local.f);
+					}
+				}
+				ArrayAppend(variables.nameArgCache, local.doc.tags, true);
+			}
+
+		}
+    	return variables.nameArgCache;
     }
-    
+
+	function autocompleteMode() {
+    	return ['default','full','examples','attributes','arguments'];
+    }
+
 }
