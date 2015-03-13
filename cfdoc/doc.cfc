@@ -14,23 +14,25 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
 
 
 	/**
-	 * @name.hint The tag or function name
-     * @mode.hint One of the following: default, examples, full, arguments, attributes
-	 **/
+	* @name.hint The tag or function name
+	* @name.optionsUDF autocompleteName
+	* @mode.hint One of the following: default, examples, full, arguments, attributes
+	* @mode.options default,examples,full,arguments,attributes
+	**/
 	function run( required name, mode="default")  {
         arguments.name = LCase(Left(ReReplace(arguments.name, "[^a-zA-Z0-9-]", "", "ALL"), 100));
         var doc = getDoc(name);
 
         if (!StructIsEmpty(doc)) {
             if (arguments.mode == "default" || arguments.mode == "full") {
-                print.boldText(doc.name).print("  " & doc.description).line();
-                print.line(RepeatString("-", shell.getTermWidth() ));
-                print.cyan(doc.syntax);
+                print.boldText(doc.name).print("  " & doc.description).line()
+                	.line(RepeatString("-", shell.getTermWidth() ))
+                	.cyan(doc.syntax);
                 if (doc.type == "function" && StructKeyExists(doc, "returns") && Len(doc.returns)) {
                     print.cyan(' -> returns ').cyan(doc.returns);
                 }
-                print.line();
-                print.line(RepeatString("-", shell.getTermWidth() ));
+                print.line()
+                	.line(RepeatString("-", shell.getTermWidth() ));
                 if (structKeyExists(doc, "params") AND ArrayLen(doc.params)) {
                     print.line();
 
@@ -40,8 +42,8 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
                     print.line();
                     showExamples(doc);
                 } else if (StructKeyExists(doc, "examples") AND !ArrayIsEmpty(doc.examples)) {
-                    print.line().line();
-                    print.yellow("Tip: type ").yellowBold("doc " & doc.name & " examples").yellow(" to see examples.")
+                    print.line().line()
+                    	.yellow("Tip: type ").yellowBold("doc " & doc.name & " examples").yellow(" to see examples.")
                 }
             }
             else if (arguments.mode == "examples" || arguments.mode == "ex") {
@@ -49,14 +51,14 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
             } else if (arguments.mode == "arguments" || arguments.mode =="args" || arguments.mode == "attributes" || arguments.mode == "attr") {
 				showParams(doc);
             } else {
-                print.boldRedLine("Sorry I don't know mode: " & arguments.mode);
-                print.line();
-                print.line("Please try one of these modes:");
-                print.indentedBold("default").line(" - this is the default if you don't specify a mode.");
-                print.indentedBold("full").line(" - shows as much information as possible, verbose.");
-                print.indentedBold("examples").line(" - shows examples of the tag/function. Shortcut: ex");
-                print.indentedBold("arguments").line(" - shows only the function arguments. Shortcut: args");
-                print.indentedBold("attributes").line(" - shows tag attributes. Shortcut: attr");
+                print.boldRedLine("Sorry I don't know mode: " & arguments.mode)
+	                .line()
+	                .line("Please try one of these modes:")
+	                .indentedBold("default").line(" - this is the default if you don't specify a mode.")
+	                .indentedBold("full").line(" - shows as much information as possible, verbose.")
+	                .indentedBold("examples").line(" - shows examples of the tag/function. Shortcut: ex")
+	                .indentedBold("arguments").line(" - shows only the function arguments. Shortcut: args")
+	                .indentedBold("attributes").line(" - shows tag attributes. Shortcut: attr");
 
             }
         } else {
@@ -107,9 +109,9 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
         print.boldTextLine(doc.name & " - Examples");
         if (StructKeyExists(doc, "examples") AND !ArrayIsEmpty(doc.examples)) {
             for (local.e in doc.examples) {
-                print.line(RepeatString("-", shell.getTermWidth() ));
-                print.bold(local.e.title).line(" " & local.e.description);
-                print.line().magenta(local.e.code);
+                print.line(RepeatString("-", shell.getTermWidth() ))
+                	.bold(local.e.title).line(" " & local.e.description)
+                	.line().magenta(local.e.code);
                 if (structKeyExists(local.e, "result") && Len(local.e.result)) {
                     print.line().boldLine("Expected Result: " & local.e.result);
                 }
@@ -130,4 +132,11 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
             return {};
         }
     }
+    
+    function autocompleteName() {
+    	// This ONLY pulls functions.  Find a way to add in tags too.
+    	// Perhaps store in a file and read/cache.
+    	return listToArray( structKeyList( getFunctionList() ) );
+    }
+    
 }
