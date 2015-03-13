@@ -152,8 +152,5 @@ component extends="commandbox.system.BaseCommand" aliases="doc" excludeFromHelp=
     	return variables.nameArgCache;
     }
 
-	function autocompleteMode() {
-    	return ['default','full','examples','attributes','arguments'];
-    }
 
 }
