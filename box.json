@@ -5,7 +5,7 @@
     \n    \n     Foundeo Inc.",
     "location":"",
     "directory":"",
-    "createPackageDirectory":true,
+    "createPackageDirectory":false,
     "packageDirectory":"",
     "homepage":"http://cfdocs.org/",
     "documentation":"https://github.com/foundeo/cfdocs-command",
