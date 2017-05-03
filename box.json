@@ -3,9 +3,6 @@
     "version":"0.1.3",
     "author":"Pete Freitag,\n    \n    \n     Foundeo Inc.",
     "location":"foundeo/cfdocs-command#v0.1.3",
-    "directory":"",
-    "createPackageDirectory":false,
-    "packageDirectory":"",
     "homepage":"http://cfdocs.org/",
     "documentation":"https://github.com/foundeo/cfdocs-command",
     "repository":{
@@ -33,7 +30,7 @@
         }
     ],
     "contributors":[
-        
+
     ],
     "scripts":{
         "postVersion":"package set location='foundeo/cfdocs-command#v`package version`'",
