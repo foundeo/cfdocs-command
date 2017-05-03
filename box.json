@@ -18,7 +18,7 @@
     "description":"Displays concise CFML documentation (tag attributes,\n    \n    \n     function arguments,\n    \n    \n     etc) quickly including examples (in some cases).",
     "instructions":"",
     "changelog":"https://github.com/foundeo/cfdocs-command/blob/master/cfdocs/changelog.txt",
-    "type":"commandbox-module",
+    "type":"commandbox-modules",
     "keywords":[
         "documenation",
         "docs",
