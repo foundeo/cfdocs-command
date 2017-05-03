@@ -1,7 +1,9 @@
+Version 0.1.2 2017-05-02
+    * Refactored to be a commandbox-module
 Version 0.0.3 2015-03-13
     * Merged a pull request from Brad Wood supporting tab completion for functions.
     * Added autocomplete for tags
-    * Added autocomplete mode 
+    * Added autocomplete mode
 Version 0.0.2 2015-03-12
     * Fixed some display bugs
     * Renamed namespace to cfdoc
