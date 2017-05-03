@@ -1,8 +1,8 @@
 {
-    "name":"cfdocs-command",
-    "version":"0.1.1",
+    "name":"CFDocs Command",
+    "version":"0.1.2",
     "author":"Pete Freitag,\n    \n    \n     Foundeo Inc.",
-    "location":"foundeo/cfdocs-command#v0.1.1",
+    "location":"foundeo/cfdocs-command#v0.1.2",
     "directory":"",
     "createPackageDirectory":false,
     "packageDirectory":"",
