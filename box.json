@@ -1,9 +1,8 @@
 {
     "name":"cfdocs-command",
-    "version":"0.0.3",
-    "author":"Pete Freitag,
-    \n    \n     Foundeo Inc.",
-    "location":"",
+    "version":"0.1.0",
+    "author":"Pete Freitag,\n    \n    \n     Foundeo Inc.",
+    "location":"foundeo/cfdocs-command#v0.1.0",
     "directory":"",
     "createPackageDirectory":false,
     "packageDirectory":"",
@@ -16,12 +15,10 @@
     "bugs":"",
     "slug":"cfdocs",
     "shortDescription":"A command for accessing CFML documentation powered by cfdocs.org",
-    "description":"Displays concise CFML documentation (tag attributes,
-    \n    \n     function arguments,
-    \n    \n     etc) quickly including examples (in some cases).",
+    "description":"Displays concise CFML documentation (tag attributes,\n    \n    \n     function arguments,\n    \n    \n     etc) quickly including examples (in some cases).",
     "instructions":"",
     "changelog":"https://github.com/foundeo/cfdocs-command/blob/master/cfdocs/changelog.txt",
-    "type":"commandbox-commands",
+    "type":"commandbox-module",
     "keywords":[
         "documenation",
         "docs",
@@ -36,8 +33,13 @@
         }
     ],
     "contributors":[
-
+        
     ],
+    "scripts":{
+        "postVersion":"package set location='foundeo/cfdocs-command#v`package version`'",
+        "onRelease":"publish",
+        "postPublish":"!git push && !git push --tags"
+    },
     "ignore":[
         "**/.*",
         "test",
