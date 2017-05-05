@@ -1,8 +1,8 @@
 {
     "name":"CFDocs Command",
-    "version":"0.1.4",
+    "version":"0.1.5",
     "author":"Pete Freitag,\n    \n    \n     Foundeo Inc.",
-    "location":"foundeo/cfdocs-command#v0.1.4",
+    "location":"foundeo/cfdocs-command#v0.1.5",
     "homepage":"http://cfdocs.org/",
     "documentation":"https://github.com/foundeo/cfdocs-command",
     "repository":{
