@@ -1,6 +1,6 @@
 component {
 
-	this.cfmapping = "cfscriptme-command";
+	this.cfmapping = "cfdocs";
 
 
 	function configure() {
