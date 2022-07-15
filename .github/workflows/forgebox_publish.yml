@@ -36,5 +36,8 @@ jobs:
           cat box.json
           
           echo $VERSION > ./version.txt
+        env:
+          BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN: ${{ secrets.BOX_CONFIG_ENDPOINTS_FORGEBOX_APITOKEN }}
+
 
           
